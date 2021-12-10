@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-0" id="help" style="margin: 0, 0, 0, 0;">
+<nav class="navbar navbar-expand-md navbar-dark mb-0" id="firstBar" style="margin: 0, 0, 0, 0;">
     <div class="container-fluid">
         
         <a href="#" class="navbar-brand nav-link dropdown-toggle" data-toggle="dropdown">Fashion Factory</a>
@@ -6,7 +6,7 @@
         <form class="navbar-form">
             <div class="input-group">
                 <div class="input-group-btn">
-                  <button class="btn btn-primary" type="submit">
+                  <button class="btn btn-warning" type="submit">
                     <i>Q</i>
                   </button>
                 </div>
@@ -14,26 +14,28 @@
             </div>
           </form>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarTop">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <button class="btn btn-outline-primary">Sign Up</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-outline-primary">Logout</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-outline-primary">Cart</button>
-                </li>
-            </ul>
+        <div class="d-flex justify-content-end">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTop"  aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTop">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-warning">Sign Up</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-warning">Logout</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-warning">Cart</button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
 
-<nav class="navbar navbar-expand-sm navbar-light bg-light mb-0" style="border-bottom:1px solid darkslategrey;">
+<nav class="navbar navbar-expand-sm navbar-light bg-light mb-0" id="secondBar" style="border-bottom:1px solid darkslategrey;">
     <div class="container">
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
