@@ -8,7 +8,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthModule } from './auth/auth.module';
+//import { AuthModule } from './auth/auth.module';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 // import { SharedModule } from './shared/shared.module';
@@ -32,7 +32,7 @@ const appRoutes:Routes= [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AuthModule,
+    //AuthModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

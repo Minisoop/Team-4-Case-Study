@@ -1,0 +1,21 @@
+.row div {
+    padding: 1vh
+}
+
+div{
+    border: 1px, solid, black;
+}
+
+.row .card {
+    height: 100%;
+}
+
+.row .card img {
+    width:100%;
+    height: auto;
+    margin: auto;
+}
+
+.container > h1 {
+    margin: 4vh 0;
+}
