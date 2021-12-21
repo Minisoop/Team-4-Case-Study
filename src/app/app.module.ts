@@ -19,6 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewarrivalComponent } from './categories/newarrival/newarrival.component';
 import { BestsellingComponent } from './categories/bestselling/bestselling.component';
 import { CommonModule } from '@angular/common';
+import { AllensollyComponent } from './brand/allensolly/allensolly.component';
+import { GucciComponent } from './brand/gucci/gucci.component';
+import { PradaComponent } from './brand/prada/prada.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { CommonModule } from '@angular/common';
     MenComponent,
     WomenComponent,
     NewarrivalComponent,
-    BestsellingComponent
+    BestsellingComponent,
+    AllensollyComponent,
+    GucciComponent,
+    PradaComponent
   
   ],
   imports: [
