@@ -1,0 +1,139 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    
+    /* backdrop-filter: blur(5px);  */
+    
+  
+}
+.content {
+    background-size: cover;
+    background-attachment: fixed; 
+    background-size: 100% ; 
+    filter: blur(4px);
+}
+.logo {
+text-align: center;
+padding-top: 2%;
+padding-left: 35%;
+padding-right: 50%;
+position: relative;
+}
+.heading{
+    padding-left: 35%;
+    width: 100%;
+    /* margin: auto; */
+    margin-top: 10px;
+}
+.heading h1{
+    color:black;
+    font-family:sans-serif;
+    font:bold;
+    /* margin: 0px 10px; */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    justify-content: center;
+    
+    }
+ 
+#head{
+    font-size: 1.8em;
+}
+
+#content1{
+    width: 90%;
+    margin-top: auto;
+    margin-left: 10px;
+}
+form{
+    background-color:rgb(0, 0, 0,0.3);
+    color:black;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    border-radius: 5px;
+    margin:auto;
+    /* margin-top: 7px; */
+    padding-bottom: 50px;
+    border:black;
+    border-color:#000;
+    outline: red;
+    margin: 235px 0px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+form .box{
+    width: 95%;
+    height: 2.7em;
+    position: relative;
+    bottom: 10px;
+    border: 5px;;
+    border-radius: 5px;
+    color:darkgray;
+}
+
+form input[type="submit"]
+{
+    border:none;
+    outline: none;
+    height: 3em;
+    width: 45%;
+    background:#fb2525;
+    color:#fff;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
+    top: 11px;
+    margin-right: 5px;
+}
+
+form input[type="submit"]:hover
+{
+    cursor: pointer;
+    background:#ffc107;
+    color:#000;
+
+}
+form input[type="cancel"]
+{
+    border:none;
+    outline: none;
+    height: 3em;
+    width: 45%;
+    background:#fb2525;
+    color:#fff;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
+    top: 11px;
+    padding-left: 75px;
+    margin-left: 13px;
+}
+form input[type="cancel"]:hover
+{
+    cursor: pointer;
+    background:#ffc107;
+    color:#000;
+}
+#content1 textarea{
+    width: 98.5%;
+    height: 125px;
+    position: relative;
+    bottom: 17px;
+}
+#content1 p{
+    text-align: center;
+    font: bold;
+    font-size: medium;
+}
+#content1 p a{
+    color: red;
+    font: bold;
+    cursor: pointer;
+}

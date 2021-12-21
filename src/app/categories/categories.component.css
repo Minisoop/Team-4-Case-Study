@@ -1,0 +1,8 @@
+.heading h1{
+    text-align: left;
+    justify-content: left;
+}
+.heading h3{
+    text-align: justify;
+    justify-content: center;
+}
