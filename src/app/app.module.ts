@@ -22,6 +22,10 @@ import { CommonModule } from '@angular/common';
 import { AllensollyComponent } from './brand/allensolly/allensolly.component';
 import { GucciComponent } from './brand/gucci/gucci.component';
 import { PradaComponent } from './brand/prada/prada.component';
+import { SummerComponent } from './home/offers/summer/summer.component';
+import { DenimComponent } from './home/offers/denim/denim.component';
+import { ThrowbackComponent } from './home/offers/throwback/throwback.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -42,7 +46,10 @@ import { PradaComponent } from './brand/prada/prada.component';
     BestsellingComponent,
     AllensollyComponent,
     GucciComponent,
-    PradaComponent
+    PradaComponent,
+    SummerComponent,
+    DenimComponent,
+    ThrowbackComponent
   
   ],
   imports: [
@@ -51,7 +58,8 @@ import { PradaComponent } from './brand/prada/prada.component';
     HttpClientModule,
     ReactiveFormsModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent,ContactComponent]

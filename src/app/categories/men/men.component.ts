@@ -7,7 +7,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./men.component.css']
 })
 export class MenComponent implements OnInit {
-
+  currentRate = 5;
   public productList:any;
   constructor(private api : ApiService){}
   

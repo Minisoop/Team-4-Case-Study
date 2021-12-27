@@ -12,7 +12,12 @@ export class HeaderComponent implements OnInit {
   onLoadLogout(){
     this.router.navigate(['/sign-in']);
   } 
-
+  onLoadMen(){
+    this.router.navigate(['/men']);
+  } 
+  onLoadWomen(){
+    this.router.navigate(['/women']);
+  } 
   ngOnInit(): void {
   }
 
