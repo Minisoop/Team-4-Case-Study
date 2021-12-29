@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,15 +8,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SignInComponent{
 
-  // constructor(private router:Router ,private route:ActivatedRoute) { }
-
-
-
-  // onLoadServes(){
-
-  //   this.router.navigate(['/Sign up']);
-
-  // }
+  constructor(private router:Router,private route:ActivatedRoute) { }
+  onLoadSignUp(){
+    this.router.navigate(['/sign-up']);
+  } 
 
   photo="assets/images/login1.jpg";
   photo1="assets/images/facebook.png";

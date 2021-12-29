@@ -112,6 +112,7 @@ section .contentbx .formbx .inputbx p{
 }
 section .contentbx .formbx .inputbx p a{
     color: #ff4584;
+    cursor: pointer;
 }
 section .contentbx .formbx h3{
     color: #607d8b;

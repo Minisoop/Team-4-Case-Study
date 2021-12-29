@@ -1,0 +1,36 @@
+<!-- <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown button
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Men</a>
+      <a class="dropdown-item" href="#">Women</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div> -->
+
+
+  <pre></pre>
+
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+            <div class="card border-secondary bg-light text-center">
+                <img src="assets/images/men.webp"  class="card-img-top img-fluid" alt="">
+                <div class="card-body">
+                    <!-- <h4 class="card-title">Men</h4> -->
+                    
+                    <a class="btn btn-success btn-lg btn-block" (click)="onLoadMen()" routerLink="men" routerLinkActive="active-link">Men</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+            <div class="card border-secondary bg-light text-center">
+                <img src="assets/images/women.webp"  class="card-img-top img-fluid" alt="">
+                <div class="card-body">
+                    <!-- <h4 class="card-title">Women</h4> -->
+                    
+                    <a class="btn btn-success btn-lg btn-block" (click)="onLoadWomen()" routerLink="women" routerLinkActive="active-link">Women</a>
+                </div>
+            </div>
+        </div>

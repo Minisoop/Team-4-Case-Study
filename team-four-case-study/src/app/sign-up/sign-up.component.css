@@ -23,18 +23,18 @@ position: relative;
 .heading{
     padding-left: 35%;
     width: 100%;
-    margin: auto;
-    margin-top: 40px;
+    /* margin: auto; */
+    margin-top: 10px;
 }
 .heading h1{
     color:black;
     font-family:sans-serif;
     font:bold;
-    margin: 0px 10px;
+    /* margin: 0px 10px; */
     transform: translate(-50%, -50%);
     text-align: center;
     justify-content: center;
-    margin: -802px 180px;
+    
     }
  
 #head{
@@ -56,12 +56,12 @@ form{
     width: 40%;
     border-radius: 5px;
     margin:auto;
-    margin-top: 15px;
+    /* margin-top: 7px; */
     padding-bottom: 50px;
     border:black;
     border-color:#000;
     outline: red;
-    margin: 60px 0px;
+    margin: 235px 0px;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -135,4 +135,5 @@ form input[type="cancel"]:hover
 #content1 p a{
     color: red;
     font: bold;
+    cursor: pointer;
 }

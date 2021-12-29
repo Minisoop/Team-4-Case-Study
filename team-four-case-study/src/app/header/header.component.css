@@ -4,4 +4,28 @@
 
 #firstBar {
     background-color: purple;
+    padding-top: 5px;
+}
+.navbar-brand nav-link{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    height: 40px;
+    padding-right: 15px;
+    padding-left: 5px;
+}
+/* .glyphicon glyphicon-search{
+    color: black;
+} */
+.btn btn-warning{
+ padding: 0px;
+}
+.form-control{
+    margin-right: 1px;
+}
+.input-group .btn {
+    position: relative;
+    z-index: 2;
+    /* padding: 20px; */
 }

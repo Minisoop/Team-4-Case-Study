@@ -1,15 +1,16 @@
 <div class="content">
-<img [src]="myimage" height="800px" width="1500px">  
+        
+<img [src]="myimage" height="800px" width="1350px">  
 </div>
 <div class="heading">
-    <h1 id="head">Create Account</h1>
+    
    
     </div>
     <form>
        
            
             <div id="content1">
-            
+                <h1 id="head">Create Account</h1><br>
             <label>Name</label><br><br>
             <input type="name" name="name" placeholder="  Enter your name" class="box" required><br>
             <label>Email</label><br><br>
@@ -23,14 +24,10 @@
             <label>Confirm password</label><br><br>
             <input type="password" name="password" placeholder="  Re-enter password" class="box" required><br>
            
-            <input type="submit" name="" value ="Login"> 
-            <input type="cancel" name="" value ="Cancel"> <br><br><br>
-            <p class="p">Already have an account?  <a href="#">  Sign In </a></p>
+            <input type="submit" name="" (click)="onLoadLogin()" value ="Login"> 
+            <input type="cancel" name="" (click)="onLoadCancel()" value ="Cancel"> <br><br><br>
+            <p class="p">Already have an account?  <a (click)="onLoadSignIn()">  Sign In </a></p>
             </div>
-            
-           
-
-     
            
        
     </form>

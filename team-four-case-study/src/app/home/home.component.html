@@ -1,120 +1,153 @@
-<div class="mb-4 p-5 bg-light text-center">
+<!-- <div class="mb-4 p-5 bg-light text-center">
     <h1 class="display-4">Showcase!</h1>
     <p class="lead">Look at our showcases!</p>
     <hr>
     <p>Showcasing Wonderful stuff!</p>
     <a class="btn btn-light btn-lg" href="#" role="button">Show me more!</a>
-</div>
-    
+</div> -->
+  
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/images/showcase5.jpg" class="d-block w-100" alt=" " >
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/showcase.png" class="d-block w-100" alt=" ">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/showcase4.png" class="d-block w-100" alt=" ">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/showcase2.png" class="d-block w-100" alt=" ">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <pre></pre>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
             <div class="card border-secondary bg-light text-center">
-                <img [src]="photoPlaceholder" class="card-img-top img-fluid" src="content/clothes.png" alt="">
+                <img src="assets/images/men.webp"  class="card-img-top img-fluid" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">Men</h4>
-                    <p class="card-text">Browse our men's stuff</p>
-                    <a href="#" class="btn btn-success btn-lg btn-block">Browse Men</a>
+                    <!-- <h4 class="card-title">Men</h4> -->
+                    
+                    <a class="btn btn-success btn-lg btn-block" (click)="onLoadMen()" routerLink="men" routerLinkActive="active-link">Men</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
             <div class="card border-secondary bg-light text-center">
-                <img [src]="photoPlaceholder" class="card-img-top img-fluid" src="content/clothes.png" alt="">
+                <img src="assets/images/women.webp"  class="card-img-top img-fluid" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">Women</h4>
-                    <p class="card-text">Browse our amazing beautiful feminine women's stuff</p>
-                    <a href="#" class="btn btn-success btn-lg btn-block">Browse Women</a>
+                    <!-- <h4 class="card-title">Women</h4> -->
+                    
+                    <a  class="btn btn-success btn-lg btn-block" (click)="onLoadWomen()" routerLink="women" routerLinkActive="active-link">Women</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
             <div class="card border-secondary bg-light text-center">
-                <img [src]="photoPlaceholder" class="card-img-top img-fluid" src="content/clothes.png" alt="">
+                <img src="assets/images/new.webp"  class="card-img-top img-fluid" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">New Arrivals</h4>
-                    <p class="card-text">Browse our new stuff</p>
-                    <a href="#" class="btn btn-success btn-lg btn-block">Browse New Arrivals</a>
+                    <!-- <h4 class="card-title">New Arrivals</h4> -->
+                    
+                    <a class="btn btn-success btn-lg btn-block" (click)="onLoadNewArrival()" routerLink="newarrival" routerLinkActive="active-link">New Arrivals</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
             <div class="card border-secondary bg-light text-center">
-                <img [src]="photoPlaceholder" class="card-img-top img-fluid" src="content/clothes.png" alt="">
+                <img src="assets/images/selling.jpg"  class="card-img-top img-fluid" width="600px" height="800px">
                 <div class="card-body">
-                    <h4 class="card-title">Best Selling</h4>
-                    <p class="card-text">Browse our most popular stuff</p>
-                    <a href="#" class="btn btn-success btn-lg btn-block">Browse Best Selling</a>
+                  
+                    <!-- <h4 class="card-title">Best Selling</h4> -->
+                    <a class="btn btn-success btn-lg btn-block" (click)="onLoadBestSelling()" routerLink="bestselling" routerLinkActive="active-link">Best Selling</a>
                 </div>
             </div>
         </div>
     </div>
-
+    <pre></pre>
     <h2 class="display-4 text-center">Shop By Brand</h2>
-
+    <pre></pre>
     <div class="row">
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="card border-secondary bg-light text-center">
-                <img [src]="photoPlaceholder" class="card-img-top img-fluid" src="content/clothes.png" alt="">
+                <img src="assets/images/allensolly.png"  class="card-img-top img-fluid" width="720px" height="465px">
                 <div class="card-body">
-                    <h4 class="card-title">Brand 1</h4>
-                    <p class="card-text">Browse our most popular stuff</p>
-                    <a href="#" class="btn btn-success btn-lg btn-block">Browse Best Selling</a>
+                    <!-- <h4 class="card-title">AllenSolly</h4> -->
+                    <br>
+                    <a  class="btn btn-success btn-lg btn-block" (click)="onLoadAllenSolly()" routerLink="shopnow" routerLinkActive="active-link">Shop Now</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="card border-secondary bg-light text-center">
-                <img [src]="photoPlaceholder" class="card-img-top img-fluid" src="content/clothes.png" alt="">
+                <img src="assets/images/gucci2.jpg"  class="card-img-top img-fluid" width="720px" height="465px">
                 <div class="card-body">
-                    <h4 class="card-title">Brand 2</h4>
-                    <p class="card-text">Browse our most popular stuff</p>
-                    <a href="#" class="btn btn-success btn-lg btn-block">Browse Best Selling</a>
+                    <!-- <h4 class="card-title">Gucci</h4> -->
+                   
+                    <a class="btn btn-success btn-lg btn-block"(click)="onLoadGucci()" routerLink="shopnow" routerLinkActive="active-link">Shop Now</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="card border-secondary bg-light text-center">
-                <img [src]="photoPlaceholder" class="card-img-top img-fluid" src="content/clothes.png" alt="">
+                <img src="assets/images/Logo-Prada.jpg"  class="card-img-top img-fluid" width="720px" height="465px">
                 <div class="card-body">
-                    <h4 class="card-title">Brand 3</h4>
-                    <p class="card-text">Browse our most popular stuff</p>
-                    <a href="#" class="btn btn-success btn-lg btn-block">Browse Best Selling</a>
+                    <!-- <h4 class="card-title">Prada</h4> -->
+                    
+                    <a class="btn btn-success btn-lg btn-block"(click)="onLoadPrada()" routerLink="shopnow" routerLinkActive="active-link">Shop Now</a>
                 </div>
             </div>
         </div>
     </div>
-
+    <hr>
     <h2 class="display-4 text-center">Pocket Friendly Fashion</h2>
 
     <div class="row">
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="card border-secondary bg-light text-center">
-                <img [src]="photoPlaceholder" class="card-img-top img-fluid" src="content/clothes.png" alt="">
+                <img src="assets/images/discount3.jpg"  class="card-img-top img-fluid" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">Small Discounts</h4>
-                    <p class="card-text">Browse our most popular stuff</p>
-                    <a href="#" class="btn btn-success btn-lg btn-block">Browse Best Selling</a>
+                    <!-- <h4 class="card-title">Small Discounts</h4> -->
+                    <br>
+                    <a  class="btn btn-success btn-lg btn-block" (click)="onLoadSummer()" routerLink="shopnow">Shop Now</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="card border-secondary bg-light text-center">
-                <img [src]="photoPlaceholder" class="card-img-top img-fluid" src="content/clothes.png" alt="">
+                <img src="assets/images/discount1.jpg"  class="card-img-top img-fluid" width="640px" height="600px">
                 <div class="card-body">
-                    <h4 class="card-title">Medium Discounts</h4>
-                    <p class="card-text">Browse our most popular stuff</p>
-                    <a href="#" class="btn btn-success btn-lg btn-block">Browse Best Selling</a>
+                    <!-- <h4 class="card-title">Medium Discounts</h4> -->
+                    <br><br>
+                    <a class="btn btn-success btn-lg btn-block" (click)="onLoadThrowback()" routerLink="shopnow">Shop Now</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="card border-secondary bg-light text-center">
-                <img [src]="photoPlaceholder" class="card-img-top img-fluid" src="content/clothes.png" alt="">
+                <img src="assets/images/discount2.jpg"  class="card-img-top img-fluid" width="640px" height="600px">
                 <div class="card-body">
-                    <h4 class="card-title">Big Discounts</h4>
-                    <p class="card-text">Browse our most popular stuff</p>
-                    <a href="#" class="btn btn-success btn-lg btn-block">Browse Best Selling</a>
+                    <!-- <h4 class="card-title">Big Discounts</h4> -->
+                    
+                    <a class="btn btn-success btn-lg btn-block" (click)="onLoadDenim()" routerLink="shopnow">Shop Now</a>
                 </div>
             </div>
         </div>
