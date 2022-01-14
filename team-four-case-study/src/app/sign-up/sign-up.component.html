@@ -87,7 +87,7 @@
                     <br>
                     <label>Confirm password</label><br><br>
                     <input type="password" id = "ConfirmPassword" name="ConfirmPassword" formControlName="ConfirmPassword" placeholder="  Re-enter password" class="box" required><br>
-                    <span *ngIf="!(Sign_upForm.get('ConfirmPassword').value == Sign_upForm.get('Password').value) && Sign_upForm.get('ConfirmPassword').touched" class="help-block">Please Enter a Valid Password</span>
+                    <span *ngIf="!(Sign_upForm.get('ConfirmPassword').value == Sign_upForm.get('Password').value) && Sign_upForm.get('ConfirmPassword').touched" class="help-block">Passwords Must Match</span>
                     <br>
                    
                     <input type="submit" name=""  value ="Login"> 
