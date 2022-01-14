@@ -6,13 +6,13 @@
                <div class="contentbx">
                 <div class="formbx">
                     <h2>Login</h2>
-                    <form>
+                    <form class="form-group" #postForm="ngForm" (submit)="onSubmit(postForm)">
                         <div class="inputbx">
                             <span for="Username">Username</span>
-                            <input type="text" name="" required minlength="7">
+                            <input  class="form-control" type="text" name="Username" ngModel >
                         
                             <span>Password</span>
-                            <input type="password" name="" required >
+                            <input  class="form-control" type="text" name="password" ngModel>
                         </div>
                         <div class="remember">
                             <label><input type="checkbox" name=""> Remember me</label>
@@ -23,6 +23,17 @@
                         <div class="inputbx">
                             <p> Don't have an account? <a (click)="onLoadSignUp()">Sign up</a></p>
                         </div>
+
+                        <div>
+                            <ul>
+                              <li *ngFor="let user of users">{{ user.email }} - {{ user.password }}</li>
+                            </ul>
+                          
+                            <div>
+                              <button (click)="getUsers()">Get All Users</button>
+                            </div>
+                          </div>
+                          <hr />
                     </form>
                    <h3>Login with social media</h3>
                    <ul class="sci">

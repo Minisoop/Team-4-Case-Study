@@ -1,4 +1,4 @@
-<div class="content">
+<!-- <div class="content">
         
 <img [src]="myimage" height="800px" width="1350px">  
 </div>
@@ -6,28 +6,92 @@
     
    
     </div>
-    <form>
+    <form  [formGroup]="Sign_upForm" (ngSubmit)="onSubmit()">
        
            
             <div id="content1">
                 <h1 id="head">Create Account</h1><br>
             <label>Name</label><br><br>
-            <input type="name" name="name" placeholder="  Enter your name" class="box" required><br>
+             <input 
+            type="text" 
+            id="name" 
+            formControlName="name"
+            class="form-control">
+            <span
+            *ngIf="!Sign_upForm.get('name').valid && Sign_upForm.get('name').touched"
+            class="help-block">Please Enter a Valid Username</span>
+            <br>
             <label>Email</label><br><br>
-            <input type="email" name="email" placeholder="  Enter your email" class="box" required><br>
+            <input type="text" id="email"
+            name="email"
+            formControlName="email"
+            class="form-control">
+            <span
+            *ngIf="!Sign_upForm.get('email').valid && Sign_upForm.get('email').touched"
+            class="help-block">Please Enter a Valid Email</span>
             <label>Mobile No.</label><br><br>
-            <input type="number" name="number" placeholder="  Enter your mobile number" class="box" required><br>
+            <input type="number" formControlName="MobileNo" name="number" placeholder="  Enter your mobile number" class="form-control" required><br>
             <label>Date of Birth</label><br><br>
-            <input type="date" id="birthday" name="birthday" class="box" required><br>
-            <label>Password</label><br><br>
-            <input type="password" name="password" placeholder="  Enter your password" class="box" required><br>
+            <input type="date" formControlName="DateOfBirth" id="birthday" name="birthday" class="box" required><br>
+            <label>Password</label><br><br> 
+             <input type="password" formControlName="Password" name="password" placeholder="  Enter your password" class="form-control" required><br>
             <label>Confirm password</label><br><br>
-            <input type="password" name="password" placeholder="  Re-enter password" class="box" required><br>
+            <input type="password" formControlName="ConfirmPassword" name="password" placeholder="  Re-enter password" class="form-control" required><br>
            
-            <input type="submit" name="" (click)="onLoadLogin()" value ="Login"> 
+            <input type="submit" name=""  value ="Login"> 
             <input type="cancel" name="" (click)="onLoadCancel()" value ="Cancel"> <br><br><br>
             <p class="p">Already have an account?  <a (click)="onLoadSignIn()">  Sign In </a></p>
             </div>
            
        
-    </form>
+    </form> -->
+
+
+    <div class="content">
+        
+        <img [src]="myimage" height="800px" width="1350px">  
+        </div>
+        <div class="heading">
+            </div>
+                <form [formGroup]="Sign_upForm" (ngSubmit)="onSubmit()">
+                    <div id="content1">
+                        <h1 id="head">Create Account</h1><br>
+                    <label>Name</label><br><br>
+                    <!-- <input type="name" name="name" placeholder="  Enter your name" class="box" required> -->
+                    <input 
+                      type="text" 
+                      id="name" 
+                      formControlName="name"
+                      class="form-control">
+                    <span
+                       *ngIf="!Sign_upForm.get('name').valid && Sign_upForm.get('name').touched"
+                        class="help-block">Please Enter a Valid Username</span>    
+                    <br>
+                    <label>Email</label><br><br>
+                    <!-- <input type="email" name="email" placeholder="  Enter your email" class="box" required>-->
+                    <input type="text" id="email"
+                    name="email"
+                    formControlName="email"
+                    class="form-control">
+                    <span
+                    *ngIf="!Sign_upForm.get('email').valid && Sign_upForm.get('email').touched"
+                    class="help-block">Please Enter a Valid Email</span>
+                    <br>
+                    <label>Mobile No.</label><br><br>
+                    <input type="number" name="number" placeholder="  Enter your mobile number" class="box" required><br>
+                    <label>Date of Birth</label><br><br>
+                    <input type="date" id="birthday" name="birthday" class="box" required><br>
+                    <label>Password</label><br><br>
+                    <input type="password" name="Password" formControlName="Password" placeholder="  Enter your password" class="box" required><br>
+                    <span *ngIf="!Sign_upForm.get('Password').valid && Sign_upForm.get('Password').touched" class="help-block">Please Enter a Valid Password</span>    
+                    <br>
+                    <label>Confirm password</label><br><br>
+                    <input type="password" id = "ConfirmPassword" name="ConfirmPassword" formControlName="ConfirmPassword" placeholder="  Re-enter password" class="box" required><br>
+                    <span *ngIf="!(Sign_upForm.get('ConfirmPassword').value == Sign_upForm.get('Password').value) && Sign_upForm.get('ConfirmPassword').touched" class="help-block">Please Enter a Valid Password</span>
+                    <br>
+                   
+                    <input type="submit" name=""  value ="Login"> 
+                   <input type="cancel" name="" (click)="onLoadCancel()" value ="Cancel"> <br><br><br>
+                  <p class="p">Already have an account?  <a (click)="onLoadSignIn()">  Sign In </a></p>
+                  </div>
+            </form>

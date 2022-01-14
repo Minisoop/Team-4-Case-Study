@@ -7,6 +7,9 @@
     
   
 }
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+  }
 .content {
     background-size: cover;
     background-attachment: fixed; 

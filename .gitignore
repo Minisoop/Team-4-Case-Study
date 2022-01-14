@@ -39,3 +39,7 @@ build/
 ### Log Files ###
 nohup.out
 
+### angular generated files
+*.pack
+*.pack.old
+
