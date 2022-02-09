@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
   http: HttpClient;
-  baseUrl:string = "http://localhost:3000";
+  baseUrl:string = "http://localhost:8000";
   
   constructor( http : HttpClient) { 
     this.http = http;

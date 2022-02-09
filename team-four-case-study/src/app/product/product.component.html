@@ -1,0 +1,16 @@
+
+<div class="container mt-3">
+    <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                <img id="productImage" src="{{product.imageUrl}}" alt="">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-9">
+                <h2>{{product.name}}</h2>
+                <p>{{product.description}}</p>
+                <p>{{product.unitsInStock}}</p>
+                <p>{{product.dateCreated}}</p>
+                <p>Price: {{product.unitPrice | currency:'INR'}}</p>
+                <button type="button" class="btn btn-sm btn-primary product-btn">Add to Cart</button>
+            </div>
+    </div>
+</div>

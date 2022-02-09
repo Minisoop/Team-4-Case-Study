@@ -10,7 +10,6 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { CategoriesComponent } from './categories/categories.component';
-import { CartComponent } from './cart/cart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ContactComponent } from './contact/contact.component';
 import { MenComponent } from './categories/men/men.component';
@@ -26,7 +25,13 @@ import { SummerComponent } from './home/offers/summer/summer.component';
 import { DenimComponent } from './home/offers/denim/denim.component';
 import { ThrowbackComponent } from './home/offers/throwback/throwback.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { ProfileComponent } from './profile/profile.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductService } from './services/product.service';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { CartItemsComponent } from './cart-items/cart-items.component';
+import { OrderComponent } from './order/order.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     HomeComponent,
     CategoriesComponent,
-    CartComponent,
     WishlistComponent,
     ContactComponent,
     MenComponent,
@@ -49,7 +53,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PradaComponent,
     SummerComponent,
     DenimComponent,
-    ThrowbackComponent
+    ThrowbackComponent,
+    ProfileComponent,
+    ProductListComponent,
+    ShoppingCartComponent,
+    CartItemsComponent,
+    OrderComponent,
+    ProductComponent
   
   ],
   imports: [
@@ -61,7 +71,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent,ContactComponent]
 })
 export class AppModule { }

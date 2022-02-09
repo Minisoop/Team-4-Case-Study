@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {FormControl,FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { customValidators } from './customValidation/customValidators';
+//import { customValidators } from './customValidation/customValidators';
 // import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-sign-up',
@@ -18,7 +18,7 @@ export class SignUpComponent implements OnInit {
           'MobileNo': new FormControl(null,Validators.required),
           'DateOfBirth': new FormControl(null,[Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]),
           'Password': new FormControl(null,[Validators.required, Validators.minLength(6)]),
-          'ConfirmPassword': new FormControl(null,Validators.required, customValidators.mustMatch('Password', 'ConfirmPassword'))
+          'ConfirmPassword': new FormControl(null,Validators.required/*, customValidators.mustMatch('Password', 'ConfirmPassword')*/)
         },
         //customValidators.mustMatch('Password', 'ConfirmPassword') //HERE
         );

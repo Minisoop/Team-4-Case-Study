@@ -13,10 +13,10 @@ export class CategoriesComponent implements OnInit {
 
   constructor(private router:Router,private route:ActivatedRoute) { }
   onLoadMen(){
-    this.router.navigate(['/men']);
+    this.router.navigate(['/product-list/category/1']);
   } 
   onLoadWomen(){
-    this.router.navigate(['/women']);
+    this.router.navigate(['/product-list/category/2']);
   } 
 
   ngOnInit(): void {

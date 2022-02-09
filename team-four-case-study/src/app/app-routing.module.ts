@@ -16,6 +16,11 @@ import { PradaComponent } from './brand/prada/prada.component';
 import { DenimComponent } from './home/offers/denim/denim.component';
 import { SummerComponent } from './home/offers/summer/summer.component';
 import { ThrowbackComponent } from './home/offers/throwback/throwback.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { OrderComponent } from './order/order.component';
+import { ProductComponent } from './product/product.component';
 
 const routes:Routes= [
   // {
@@ -24,11 +29,14 @@ const routes:Routes= [
   
   { path: 'sign-in',component:SignInComponent },
   { path: 'sign-up',component:SignUpComponent },
+  { path: 'profile',component:ProfileComponent },
   //   ],
   // component: HomeComponent},
 
   { path: 'home',component:HomeComponent },
+  { path: 'shopping-cart',component:ShoppingCartComponent },
   { path: 'categories',component:CategoriesComponent},
+  { path: 'order',component:OrderComponent },
   { path : 'men', component:MenComponent},
   { path: 'women' ,component:WomenComponent},
   { path: 'aboutus' ,component:AboutUsComponent},
@@ -41,7 +49,9 @@ const routes:Routes= [
   { path: 'shopnow4' ,component:SummerComponent},
   { path: 'shopnow5' ,component:ThrowbackComponent},
   { path: 'shopnow6' ,component:DenimComponent},
-
+  { path: 'product-list/category/:id' ,component:ProductListComponent},
+  { path: 'product-list' ,component:ProductListComponent},
+  { path: 'product/:id' ,component:ProductComponent},
   { path: '**', redirectTo:" "}
 ];
 
