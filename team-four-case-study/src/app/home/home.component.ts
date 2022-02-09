@@ -12,10 +12,10 @@ export class HomeComponent implements OnInit {
   // images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
   constructor(private router:Router,private route:ActivatedRoute) { }
   onLoadMen(){
-    this.router.navigate(['/men']);
+    this.router.navigate(['/product-list/category/1']);
   } 
   onLoadWomen(){
-    this.router.navigate(['/women']);
+    this.router.navigate(['/product-list/category/2']);
   } 
   onLoadNewArrival(){
     this.router.navigate(['/newarrival']);

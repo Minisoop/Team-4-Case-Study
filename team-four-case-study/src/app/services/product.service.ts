@@ -37,14 +37,11 @@ export class ProductService {
   }
 
   getProduct(id: number): Observable<Product> {
-    console.log("Will Try to load product with id " + id);
     if(id > 0){
-      console.log("Trying to load product with id " + id);
       return this.httpClient.get<Product>(this.baseUrl + "/" + id);
     }
     else{
       return null;
-      //return this.httpClient.get<Product[]>(this.baseUrl);
     }
   }
 }
