@@ -37,7 +37,7 @@ const routes:Routes= [
   { path: 'shopping-cart',component:ShoppingCartComponent },
   { path: 'categories',component:CategoriesComponent},
   { path: 'order',component:OrderComponent },
-  { path : 'men', component:MenComponent},
+  { path: 'men', component:MenComponent},
   { path: 'women' ,component:WomenComponent},
   { path: 'aboutus' ,component:AboutUsComponent},
   { path: 'newarrival' ,component:NewarrivalComponent},
@@ -51,6 +51,7 @@ const routes:Routes= [
   { path: 'shopnow6' ,component:DenimComponent},
   { path: 'product-list/category/:id' ,component:ProductListComponent},
   { path: 'product-list' ,component:ProductListComponent},
+  { path: 'product-list/search/:query' ,component:ProductListComponent},
   { path: 'product/:id' ,component:ProductComponent},
   { path: '**', redirectTo:" "}
 ];

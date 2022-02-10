@@ -18,6 +18,10 @@ export class HeaderComponent implements OnInit {
   onLoadWomen(){
     this.router.navigate(['/women']);
   } 
+  onLoadSearchQuery(){
+    this.router.navigate(['/product-list/search/' + (<HTMLInputElement>document.getElementById("search")).value]);
+  } 
+
   ngOnInit(): void {
   }
 

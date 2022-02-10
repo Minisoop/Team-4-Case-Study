@@ -19,6 +19,10 @@ public class ProductService {
 	public List<Product> getAllProducts(){
 		return productRepository.findAll();
 	}
+
+	public Optional<Product> getProductById(long id) {
+		return productRepository.findById(id);
+	}
 	
 	public List<Product> getProductsByCategoryId(long id){
 		//There must be a better way to do this
@@ -32,7 +36,15 @@ public class ProductService {
 		return specificProducts;
 	}
 	
-	public Optional<Product> getProductById(long id) {
-		return productRepository.findById(id);
+	public List<Product> getProductsBySearch(String query){
+		//There must be a better way to do this
+		List<Product> allProducts = productRepository.findAll();
+		List<Product> specificProducts = new ArrayList<Product>();
+		for (Product product : allProducts) {
+			if(product.getName().contains(query) || product.getDescription().contains(query)) {
+				specificProducts.add(product);
+			}
+		}
+		return specificProducts;
 	}
 }

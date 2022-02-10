@@ -17,7 +17,7 @@ div {
     margin-bottom: 0;
     padding-bottom: 0;
     background-color: black;
-    min-width: 1000px;
+    min-width: 90vw;
     position: relative;
 }
 #navFooter{

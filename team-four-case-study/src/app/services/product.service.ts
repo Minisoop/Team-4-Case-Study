@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../common/product';
 import { map } from 'rxjs/operators';
+import { stringify } from 'querystring';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,15 @@ export class ProductService {
       map(response => response._embedded.products)
     );*/
   }
+  
+  getProduct(id: number): Observable<Product> {
+    if(id > 0){
+      return this.httpClient.get<Product>(this.baseUrl + "/" + id);
+    }
+    else{
+      return null;
+    }
+  }
 
   getProducts(id: number): Observable<Product[]> {
     if(id > 0){
@@ -36,12 +46,12 @@ export class ProductService {
     }
   }
 
-  getProduct(id: number): Observable<Product> {
-    if(id > 0){
-      return this.httpClient.get<Product>(this.baseUrl + "/" + id);
+  searchProducts(query: string): Observable<Product[]> {
+    if(query.length > 0){
+      return this.httpClient.get<Product[]>(this.baseUrl + "/search/" + query);
     }
     else{
-      return null;
+      return this.httpClient.get<Product[]>(this.baseUrl);
     }
   }
 }

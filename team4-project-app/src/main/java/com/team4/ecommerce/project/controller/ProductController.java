@@ -32,6 +32,11 @@ public class ProductController {
 	public List<Product> getProductsByCategoryId(@PathVariable(value = "id") long id){
 		return this.productService.getProductsByCategoryId(id);
 	}
+	
+	@GetMapping("/api/products/search/{query}")
+	public List<Product> getProductsByCategoryId(@PathVariable(value = "query") String query){
+		return this.productService.getProductsBySearch(query);
+	}
 }
 
 
