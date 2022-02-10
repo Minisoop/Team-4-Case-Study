@@ -21,10 +21,12 @@ public class ProductService {
 	private ProductRepository productRepository;
 	
 	public List<Product> getAllProducts(){
+		logger.info("All products called");
 		return productRepository.findAll();
 	}
 
 	public Optional<Product> getProductById(long id) {
+		logger.info("Product with id " + id + "...");
 		return productRepository.findById(id);
 	}
 	
@@ -37,6 +39,7 @@ public class ProductService {
 				specificProducts.add(product);
 			}
 		}
+		logger.info("Products of category id " + id + ": " + specificProducts.size());
 		return specificProducts;
 	}
 	
@@ -49,6 +52,7 @@ public class ProductService {
 				specificProducts.add(product);
 			}
 		}
+		logger.info("Products relating to '" + query + "': " + specificProducts.size());
 		return specificProducts;
 	}
 }
