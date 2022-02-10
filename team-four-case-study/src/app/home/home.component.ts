@@ -43,8 +43,6 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/shopnow6']);
   } 
 
-
   ngOnInit(): void {
   }
-
 }

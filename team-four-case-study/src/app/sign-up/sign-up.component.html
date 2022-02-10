@@ -1,97 +1,143 @@
-<!-- <div class="content">
-        
-<img [src]="myimage" height="800px" width="1350px">  
+<div class="content">    
+  <img [src]="myimage" height="800px" width="1350px">  
 </div>
 <div class="heading">
-    
-   
+</div>
+<form class="form-group" #Registerform="ngForm" (ngSubmit)="registerUser()" >
+  <small class="text-danger">{{msg}}</small>
+  <div id="content1">
+    <h1 id="head">Create Account</h1><br>
+    <div>
+      <label class="form-group">First Name</label><br>
+      <input 
+      class="form-control" 
+      type="fname" 
+      name="fname" 
+      placeholder="  Enter your first name"  
+      fname ngModel
+      [(ngModel)]="user.fname"
+      required #fname="ngModel"
+      [class.is-invalid]="fname.invalid && fname.touched">
+      <small class="text-danger"  [class.d-none]="fname.valid || fname.untouched"> First Name is required</small>
     </div>
-    <form  [formGroup]="Sign_upForm" (ngSubmit)="onSubmit()">
-       
-           
-            <div id="content1">
-                <h1 id="head">Create Account</h1><br>
-            <label>Name</label><br><br>
-             <input 
-            type="text" 
-            id="name" 
-            formControlName="name"
-            class="form-control">
-            <span
-            *ngIf="!Sign_upForm.get('name').valid && Sign_upForm.get('name').touched"
-            class="help-block">Please Enter a Valid Username</span>
-            <br>
-            <label>Email</label><br><br>
-            <input type="text" id="email"
-            name="email"
-            formControlName="email"
-            class="form-control">
-            <span
-            *ngIf="!Sign_upForm.get('email').valid && Sign_upForm.get('email').touched"
-            class="help-block">Please Enter a Valid Email</span>
-            <label>Mobile No.</label><br><br>
-            <input type="number" formControlName="MobileNo" name="number" placeholder="  Enter your mobile number" class="form-control" required><br>
-            <label>Date of Birth</label><br><br>
-            <input type="date" formControlName="DateOfBirth" id="birthday" name="birthday" class="box" required><br>
-            <label>Password</label><br><br> 
-             <input type="password" formControlName="Password" name="password" placeholder="  Enter your password" class="form-control" required><br>
-            <label>Confirm password</label><br><br>
-            <input type="password" formControlName="ConfirmPassword" name="password" placeholder="  Re-enter password" class="form-control" required><br>
-           
-            <input type="submit" name=""  value ="Login"> 
-            <input type="cancel" name="" (click)="onLoadCancel()" value ="Cancel"> <br><br><br>
-            <p class="p">Already have an account?  <a (click)="onLoadSignIn()">  Sign In </a></p>
-            </div>
-           
-       
-    </form> -->
-
-
-    <div class="content">
+        <!-- <span *ngIf="(!fname.dirty && fname.touched)"
+        class="text-danger">Please Enter a Valid First Name</span> -->
         
-        <img [src]="myimage" height="800px" width="1350px">  
+        <div>
+          <label class="form-group">Last Name</label><br>
+          
+          <input 
+          class="form-control" 
+          type="lname" 
+          name="lname" 
+          placeholder="  Enter your Last name"  
+          lname ngModel
+          [(ngModel)]="user.lname"
+          #lname="ngModel"
+          required
+          [class.is-invalid]="lname.invalid && lname.touched">
+          <small class="text-danger"  [class.d-none]="lname.valid || lname.untouched"> Last Name is required</small>
         </div>
-        <div class="heading">
-            </div>
-                <form [formGroup]="Sign_upForm" (ngSubmit)="onSubmit()">
-                    <div id="content1">
-                        <h1 id="head">Create Account</h1><br>
-                    <label>Name</label><br><br>
-                    <!-- <input type="name" name="name" placeholder="  Enter your name" class="box" required> -->
-                    <input 
-                      type="text" 
-                      id="name" 
-                      formControlName="name"
-                      class="form-control">
-                    <span
-                       *ngIf="!Sign_upForm.get('name').valid && Sign_upForm.get('name').touched"
-                        class="help-block">Please Enter a Valid Username</span>    
-                    <br>
-                    <label>Email</label><br><br>
-                    <!-- <input type="email" name="email" placeholder="  Enter your email" class="box" required>-->
-                    <input type="text" id="email"
-                    name="email"
-                    formControlName="email"
-                    class="form-control">
-                    <span
-                    *ngIf="!Sign_upForm.get('email').valid && Sign_upForm.get('email').touched"
-                    class="help-block">Please Enter a Valid Email</span>
-                    <br>
-                    <label>Mobile No.</label><br><br>
-                    <input type="number" name="number" placeholder="  Enter your mobile number" class="box" required><br>
-                    <label>Date of Birth</label><br><br>
-                    <input type="date" id="birthday" name="birthday" class="box" required><br>
-                    <label>Password</label><br><br>
-                    <input type="password" name="Password" formControlName="Password" placeholder="  Enter your password" class="box" required><br>
-                    <span *ngIf="!Sign_upForm.get('Password').valid && Sign_upForm.get('Password').touched" class="help-block">Please Enter a Valid Password</span>    
-                    <br>
-                    <label>Confirm password</label><br><br>
-                    <input type="password" id = "ConfirmPassword" name="ConfirmPassword" formControlName="ConfirmPassword" placeholder="  Re-enter password" class="box" required><br>
-                    <span *ngIf="!(Sign_upForm.get('ConfirmPassword').value == Sign_upForm.get('Password').value) && Sign_upForm.get('ConfirmPassword').touched" class="help-block">Passwords Must Match</span>
-                    <br>
-                   
-                    <input type="submit" name=""  value ="Login"> 
-                   <input type="cancel" name="" (click)="onLoadCancel()" value ="Cancel"> <br><br><br>
-                  <p class="p">Already have an account?  <a (click)="onLoadSignIn()">  Sign In </a></p>
-                  </div>
-            </form>
+          <!-- <span *ngIf="(!lname.dirty && lname.touched)"
+          class="text-danger">Please Enter a Valid Last Name</span> -->
+
+        <div>
+        <label class="form-group">Email</label><br>
+        <input
+        class="form-control" 
+        type="email" 
+        name="email" 
+        placeholder="  Enter your email"  
+        email ngModel
+        [(ngModel)]="user.emailId"
+        #email="ngModel"
+        required
+        [class.is-invalid]="email.invalid && email.touched">
+        <small class="text-danger"  [class.d-none]="email.valid || email.untouched"> Email Id is required</small>
+      </div>
+        <!-- <span *ngIf="(!email.dirty && email.touched)"
+        class="text-danger">Please Enter a Valid Email</span> -->
+        
+
+        <div>
+        <label class="form-group">Mobile No.</label><br>
+        <input
+        class="form-control" 
+        type="number" 
+        name="contact" 
+        placeholder="  Enter your Mobile Number"  
+        contact ngModel
+        [(ngModel)]="user.contact"
+        #contact="ngModel"
+        required
+        [class.is-invalid]="contact.invalid && contact.touched">
+        <small class="text-danger"  [class.d-none]="contact.valid || contact.untouched"> Mobile Number is required</small>
+      </div>
+        <!-- <span *ngIf="(!mobile_Number.dirty && mobile_Number.touched)"
+        class="text-danger">Please Enter a Valid Mobile Number</span> -->
+        
+
+        <div>
+        <label class="form-group">Date of Birth</label><br>
+        <input
+        class="form-control" 
+        type="date" 
+        name="birthDate" 
+        placeholder="  mm/dd/yyyy"  
+        birthDate ngModel
+        [(ngModel)]="user.birthDate"
+        #birthDate="ngModel"
+        required
+        [class.is-invalid]="birthDate.invalid && birthDate.touched">   
+        <small class="text-danger"  [class.d-none]="birthDate.valid || birthDate.untouched"> Date of birth is required</small>    
+      </div>     
+        <!-- <span *ngIf="(!dateofBirth.dirty && dateofBirth.touched)"
+        class="text-danger"></span> -->
+        
+        
+        <div>
+        <label class="form-group">Password</label><br>
+        <input
+        class="form-control" 
+        type="password" 
+        name="password" 
+        placeholder="  Enter Password"  
+        password ngModel
+        [(ngModel)]="user.password"
+        #password="ngModel"
+        pattern="(?=.*[!@#$%&*])(?=.*[a-z])(?=.*[A-Z]).{6,}"
+        maxlength="10"
+        required
+        [class.is-invalid]="password.invalid && password.touched">     
+        <small class="text-danger" [class.d-none]="password.valid || password.untouched"> Password is required</small>
+        
+      </div>     
+        <!-- <span *ngIf="(!password.dirty && password.touched)"
+        class="text-danger">Please Enter a Valid Password</span> -->
+        
+
+
+        <div>
+        <label class="form-group">Confirm password</label><br>
+        <input
+        class="form-control" 
+          type="password" 
+          name="conpassword" 
+          placeholder="   Confirm Password "  
+          conpassword ngModel
+          #conpassword="ngModel"
+          pattern="{{password.value}}"
+          maxlength="10"
+          required
+          [class.is-invalid]="conpassword.invalid && conpassword.touched">  
+          <small class="text-danger" [class.d-none]="(conpassword.value==password.value) || conpassword.untouched"> Confirm Password not matched</small>
+        </div>         
+          <!-- <span *ngIf="(!password.dirty && password.touched)"
+          class="text-danger">Password Not Match</span>  -->
+        
+        <input type="submit" name=""  value ="Register"> 
+        <input type="cancel" name="" (click)="onLoadCancel()" value ="Cancel"> <br><br><br>
+        <p class="p">Already have an account?  <a (click)="onLoadSignIn()">  Sign In </a></p>
+  </div>
+</form>
+        

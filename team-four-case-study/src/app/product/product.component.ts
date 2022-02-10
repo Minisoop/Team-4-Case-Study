@@ -22,29 +22,15 @@ export class ProductComponent implements OnInit {
   }
   
   public listProducts(): void {
-    // check if "id" parameter is available
-    //const hasCategoryId: boolean = 
-
+    // Check if contains available "id" parameter
     if(this.route.snapshot.paramMap.has('id')){
         this.currentProductId = +this.route.snapshot.paramMap.get('id');
-        console.log("Product Loading... " + this.currentProductId);
         this.productListService.getProduct(this.currentProductId).subscribe((productFromBackend) => {
-        this.product = productFromBackend;
-        console.log("Product Loaded - " + this.product.id);
-      });
+        this.product = productFromBackend; // Set Product
+       });
     }
     else{
-      console.log("ERROR - no id");
+      console.log("ERROR - no id"); // No id - nothing to load
     }
-
-    
-    
-    /*
-    this.productListService.getProductList().subscribe(
-      (data: Product[]) => {
-        this.products = data;
-      }, (err: any) => { console.log(err);}
-    );*/
   }
-
 }

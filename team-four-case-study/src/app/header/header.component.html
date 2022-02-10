@@ -36,9 +36,7 @@
                         <button class="btn btn-outline-warning" routerLink="logout" routerLinkActive="active-link" (click)="onLoadLogout()">Logout</button>
                     </li>
                     <li class="nav-item">
-                       
-                        <button class="btn btn-outline-warning" routerLink="shopping-cart" routerLinkActive="active-link" ><i class="fa fa-shopping-bag"></i><span> 5 </span></button>
-
+                        <button class="btn btn-outline-warning" routerLink="cart" routerLinkActive="active-link">Cart</button>
                     </li>
                 </ul>
             </div>
@@ -46,53 +44,22 @@
     </div>
 </nav>
 
-<nav class="navbar navbar-expand-sm navbar-light bg-light mb-0" id="secondBar" style="border-bottom:1px solid darkslategrey;">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-0" id="secondBar" style="border-bottom:1px solid darkslategrey;">
     <div class="container">
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+        <div class="d-flex justify-content-end">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarnavDropdown" aria-controls="navbarnavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarnavDropdown">
+                <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="home" routerLinkActive="active-link">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="categories" routerLinkActive="active-link">Categories</a>
                 </li>
-                <!-- <li class="nav-item dropdown">
-
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-          
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          
-                      <li><a class="dropdown-item" (click)="onLoadMen()" routerLink="men" routerLinkActive="active-link">Men</a></li>
-          
-                      <li><a class="dropdown-item" (click)="onLoadWomen()" routerLink="women" routerLinkActive="active-link">Women</a></li>
-          
-                      <li><a class="dropdown-item" href="#">Something else here</a></li> 
-          
-                    </ul>
-          
-                  </li> -->
-                  <!-- <li class="nav-item dropdown">
-
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          
-                      Dropdown link
-          
-                    </a>
-          
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-          
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-          
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-          
-                    </ul>
-          
-                  </li> -->
+                
               <li class="nav-item">
                     <a class="nav-link" routerLink="wishlist" routerLinkActive="active-link">Wishlist</a>
                 </li>
@@ -105,10 +72,9 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="aboutus" routerLinkActive="active-link">About Us</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">...</a>
-                </li> -->
+               
             </ul>
+        </div>
         </div>
     </div>
 </nav>

@@ -23,15 +23,10 @@ import { OrderComponent } from './order/order.component';
 import { ProductComponent } from './product/product.component';
 
 const routes:Routes= [
-  // {
-  //   path:"",
-  //   children:[
   
   { path: 'sign-in',component:SignInComponent },
   { path: 'sign-up',component:SignUpComponent },
   { path: 'profile',component:ProfileComponent },
-  //   ],
-  // component: HomeComponent},
 
   { path: 'home',component:HomeComponent },
   { path: 'shopping-cart',component:ShoppingCartComponent },

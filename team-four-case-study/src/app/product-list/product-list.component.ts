@@ -28,7 +28,7 @@ export class ProductListComponent implements OnInit {
   }
   
   public listProducts(): void {
-    // check if "id" parameter is available
+    // Check if contains available "id" parameter
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
 
     if(this.route.snapshot.paramMap.has('query')){
@@ -37,26 +37,16 @@ export class ProductListComponent implements OnInit {
         this.productList = products;
       });
     }
-    else{
+    else{ // Not a search
       if(hasCategoryId){
         this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
       }
       else{
-        this.currentCategoryId = 0;
+        this.currentCategoryId = 0; // Will return all products
       }
       this.productListService.getProducts(this.currentCategoryId).subscribe((products) => {
         this.productList = products;
       });
     }
-
-    
-    
-    /*
-    this.productListService.getProductList().subscribe(
-      (data: Product[]) => {
-        this.products = data;
-      }, (err: any) => { console.log(err);}
-    );*/
   }
-
 }

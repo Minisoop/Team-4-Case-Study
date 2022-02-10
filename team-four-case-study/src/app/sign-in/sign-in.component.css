@@ -64,10 +64,10 @@ section .contentbx .formbx h2{
     display: inline-block;
     letter-spacing: 1px;
 }
-section .contentbx .formbx .inputbx{
+section .contentbx .formbx .form-group{
     margin-bottom: 20px;
 }
-section .contentbx .formbx .inputbx span{
+section .contentbx .formbx .form-group span{
     font-size: 16px;
     margin-bottom: 5px;
     display: inline-block;
@@ -76,9 +76,9 @@ section .contentbx .formbx .inputbx span{
     font-size: 16px;
     letter-spacing: 1px;
 }
-section .contentbx .formbx .inputbx input{
+section .contentbx .formbx .form-group input{
     width: 100%;
-    padding: 10px 20px;
+    padding: 8px 20px;
     outline: none;
     font-weight: 400;
     border: 1px solid #607d8b;
@@ -209,5 +209,12 @@ section .contentbx .formbx .sci li img{
         font-weight: 500;
         font-size: 14px;
     }
+    span.ng-invalid.ng-touched{
+
+        border: 1px solid red;
+        color: red;
+    
+      }
+      
 
 }

@@ -14,20 +14,12 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
 
-  /*getProductList(): Observable<Product[]> {
-    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
-      map(response => response._embedded.products)
-    );
-  }*/
-
-  getProductList(/*categoryId: number*/): Observable<Product[]> {
-    
+  // All products
+  getProductList(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.baseUrl);
-    /*return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
-      map(response => response._embedded.products)
-    );*/
   }
   
+  // Single product
   getProduct(id: number): Observable<Product> {
     if(id > 0){
       return this.httpClient.get<Product>(this.baseUrl + "/" + id);
@@ -37,6 +29,7 @@ export class ProductService {
     }
   }
 
+  // List of products based on category id
   getProducts(id: number): Observable<Product[]> {
     if(id > 0){
       return this.httpClient.get<Product[]>(this.baseUrl + "/category/" + id);
@@ -46,6 +39,7 @@ export class ProductService {
     }
   }
 
+  // List of products based on search query vs name and description
   searchProducts(query: string): Observable<Product[]> {
     if(query.length > 0){
       return this.httpClient.get<Product[]>(this.baseUrl + "/search/" + query);

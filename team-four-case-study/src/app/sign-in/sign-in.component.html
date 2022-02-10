@@ -1,48 +1,79 @@
 
            <section>
-               <div class="imgbox">
-                <img [src]="photo" alt="">
-               </div>
-               <div class="contentbx">
-                <div class="formbx">
-                    <h2>Login</h2>
-                    <form class="form-group" #postForm="ngForm" (submit)="onSubmit(postForm)">
-                        <div class="inputbx">
-                            <span for="Username">Username</span>
-                            <input  class="form-control" type="text" name="Username" ngModel >
-                        
-                            <span>Password</span>
-                            <input  class="form-control" type="text" name="password" ngModel>
-                        </div>
-                        <div class="remember">
-                            <label><input type="checkbox" name=""> Remember me</label>
-                        </div>
-                        <div class="inputbx">
-                            <input type="submit" value="Sign in" name="">
-                            </div>
-                        <div class="inputbx">
-                            <p> Don't have an account? <a (click)="onLoadSignUp()">Sign up</a></p>
-                        </div>
-
-                        <div>
-                            <ul>
-                              <li *ngFor="let user of users">{{ user.email }} - {{ user.password }}</li>
-                            </ul>
-                          
-                            <div>
-                              <button (click)="getUsers()">Get All Users</button>
-                            </div>
-                          </div>
-                          <hr />
-                    </form>
-                   <h3>Login with social media</h3>
-                   <ul class="sci">
-                       <li><img [src]="photo1" alt=""></li>
-                       <li><img [src]="photo2" alt=""></li>
-                       
-                   </ul>
+                <div class="imgbox">
+                 <img [src]="photo" alt="">
                 </div>
-               </div>
-           </section>
-           
-       
+                <div class="contentbx">
+                 <div class="formbx">
+                     <h2>Login</h2>
+                    
+                     <form class="form-group" #loginform="ngForm" (ngSubmit)="loginUser()">
+                         <small class="text-danger">{{msg}}</small> 
+                         <div>
+                             <span class="form-group">Email</span>
+                             <input class= "form-control" 
+                             id="email"
+                             type="emailId" 
+                             email ngModel
+                             [(ngModel)]="user.emailId"
+                             name="email" 
+                             required 
+                             #emailId="ngModel" 
+                             autocomplete="off"
+                             [class.is-invalid]="emailId.invalid && emailId.touched">
+                             <small class="text-danger" [class.d-none]="emailId.valid || emailId.untouched"> Email Id is required</small>
+                             <!-- <div *ngIf="emailId.errors && (emailId.invalid && emailId.touched)">
+                                 <small class="text-danger" *ngIf="emailId.errors.required"> Email Id is required</small>
+                                 <small class="text-danger" *ngIf="emailId.errors.pattern">Email Id is invalid</small>
+                               </div> -->
+                         </div>
+                             <!-- <span *ngIf="(!email.invalid && email.touched)"
+                              class="text-danger">Please Enter a Valid Username</span> -->
+                        
+ 
+                         <pre></pre>
+ 
+                         <div>
+                             <span class="form-group">Password</span>
+                             <input class= "form-control" 
+                             id="Password"
+                             type="password" ngModel
+                             name="password"                         
+                             minlength="8"
+                             required  #password="ngModel" 
+                             [(ngModel)]="user.password"
+                             autocomplete="off" 
+                             [class.is-invalid]="password.invalid && password.touched">
+                             <small class="text-danger"  [class.d-none]="password.valid || password.untouched"> Password is required</small>
+                             <!-- <div *ngIf="emailId.errors && (emailId.invalid && emailId.touched)">
+                                 <small class="text-danger" *ngIf="emailId.errors.required"> Email Id is required</small>
+                                 <small class="text-danger" *ngIf="emailId.errors.pattern">Email Id is invalid</small>
+                               </div> -->
+                         </div>
+                             <!-- <span *ngIf="(!password.invalid && password.touched)"
+                              class="text-danger">Please Enter a Correct Password</span> -->
+                         
+                         <br>
+                         <!-- <div class="remember">
+                             <label><input type="checkbox" name=""> Remember me</label>
+                         </div> -->
+                         
+                         <div class="inputbx">
+                             <input type="submit"  value="Sign in" >
+                         </div>
+                         
+                         <div class="inputbx">
+                             <p> Don't have an account? <a (click)="onLoadSignUp()">Sign up</a></p>
+                         </div>
+                     </form>
+                    <h3>Login with social media</h3>
+                    <ul class="sci">
+                        <li><img [src]="photo1" alt=""></li>
+                        <li><img [src]="photo2" alt=""></li>
+                        
+                    </ul>
+                 </div>
+                </div>
+            </section>
+            
+        

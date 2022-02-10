@@ -1,45 +1,45 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
-import { User } from '../services/user';
-import { ApiService } from '../services/api.service';
+import { User } from '../common/user';
+import { RegistrationService } from '../services/registration.service';
+
+//import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent {
-  title = 'frontend-angular-app';
-  users:any = [];
-   service: ApiService;
+  sign_inForm:FormGroup;
 
-  
 
-  constructor(private router:Router,private route:ActivatedRoute,service: ApiService) {
-    this.service = service;
-   }
+user = new User();
+msg = '';
+  constructor(private router:Router,private _service : RegistrationService) { 
+    
+  }
+
+  loginUser(){
+    this._service.loginUserFromRemote(this.user).subscribe(
+      data =>{
+        console.log("responce received");
+        this.router.navigate(['/home'])
+      },
+
+      error => {
+        console.log("exception occured");
+        this.msg="Please Enter Valid Email and Password";
+      }    
+    )
+  }
   onLoadSignUp(){
     this.router.navigate(['/sign-up']);
-
   } 
-  
-  public getUsers(){
-    this.service.getAllUsers().subscribe((response:any) => { 
-       this.users = response;
-       console.log(this.users);
-    });
- }  
-
-  onSubmit(form: NgForm){
-    // console.log(this.form.value);
-    const newUser: User={username: form.value.email, password: form.value.password};
-    this.service.addNewUsers(newUser).subscribe((response) =>{
-      console.log(response);
-    });
-  }
 
   photo="assets/images/login1.jpg";
   photo1="assets/images/facebook.png";
   photo2="assets/images/google.png";
   
-}
+    }
