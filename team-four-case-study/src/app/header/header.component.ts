@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartIemsService } from '../services/cart-iems.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router:Router,private route:ActivatedRoute) { }
+  totalQuantity: number = 0;
+  totalPrice: number=0.0;
+
+  constructor(private cartService:
+    CartIemsService,private router:Router,private route:ActivatedRoute) { }
   onLoadLogout(){
     this.router.navigate(['/sign-in']);
   } 
@@ -20,9 +25,15 @@ export class HeaderComponent implements OnInit {
   } 
   onLoadSearchQuery(){
     this.router.navigate(['/product-list/search/' + (<HTMLInputElement>document.getElementById("search")).value]);
+    
   } 
 
   ngOnInit(): void {
+    this.updateCartStatus();
   }
 
+  updateCartStatus(){
+    this.cartService.totalQuantity.subscribe(data => this.totalQuantity = data);
+    this.cartService.totalPrice.subscribe(data => this.totalPrice = data);
+  }
 }

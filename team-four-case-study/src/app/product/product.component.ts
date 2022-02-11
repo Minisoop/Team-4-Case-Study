@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../common/product';
 import { ProductService } from '../services/product.service';
 import { ActivatedRoute } from '@angular/router';
+import { CartIemsService } from '../services/cart-iems.service';
+import { CartItem } from '../common/cartitem';
 
 @Component({
   selector: 'app-product',
@@ -14,7 +16,7 @@ export class ProductComponent implements OnInit {
   currentProductId: number;
 
   constructor(private productListService: ProductService,
-              private route: ActivatedRoute) {  }
+              private route: ActivatedRoute,private cartServices:CartIemsService) {  }
 
   ngOnInit() {
     console.log("Product Component Loaded");
@@ -32,5 +34,15 @@ export class ProductComponent implements OnInit {
     else{
       console.log("ERROR - no id"); // No id - nothing to load
     }
+  }
+
+  addToCart(theProduct:Product){
+    console.log('Adding to cat');
+
+    const theCartItem = new CartItem(theProduct);
+
+    this.cartServices.addToCartItems(theCartItem);
+    console.log("Posting");
+    console.log('Adding to cart');
   }
 }

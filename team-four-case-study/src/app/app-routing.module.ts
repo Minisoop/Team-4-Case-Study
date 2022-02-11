@@ -37,7 +37,7 @@ const routes:Routes= [
   { path: 'aboutus' ,component:AboutUsComponent},
   { path: 'newarrival' ,component:NewarrivalComponent},
   { path: 'bestselling' ,component:BestsellingComponent},
-  { path: 'contact' ,component:ContactComponent},
+  { path: 'checkout' ,component:ContactComponent},
   { path: 'shopnow1' ,component:AllensollyComponent}, 
   { path: 'shopnow2' ,component:GucciComponent},
   { path: 'shopnow3' ,component:PradaComponent},

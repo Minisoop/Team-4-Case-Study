@@ -4,6 +4,8 @@ import { ProductService } from '../services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http/http';
 import { stringify } from 'querystring';
+import { CartIemsService } from '../services/cart-iems.service';
+import { CartItem } from '../common/cartitem';
 
 @Component({
   selector: 'app-product-list',
@@ -17,7 +19,7 @@ export class ProductListComponent implements OnInit {
   searchQuery: string;
 
   constructor(private productListService: ProductService,
-              private route: ActivatedRoute) {  
+              private route: ActivatedRoute,private cartServices:CartIemsService) {  
     this.route.paramMap.subscribe(params => {
         this.ngOnInit(); // Reinitialise when performing new search
     });
@@ -48,5 +50,15 @@ export class ProductListComponent implements OnInit {
         this.productList = products;
       });
     }
+  }
+
+  addToCart(theProduct:Product){
+    console.log('Adding to cat');
+
+    const theCartItem = new CartItem(theProduct);
+
+    this.cartServices.addToCartItems(theCartItem);
+    console.log("Posting");
+    console.log('Adding to cart');
   }
 }
