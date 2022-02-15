@@ -45,10 +45,11 @@ public class ProductService {
 	
 	public List<Product> getProductsBySearch(String query){
 		//There must be a better way to do this
+		String queryLowerCase = query.toLowerCase();
 		List<Product> allProducts = productRepository.findAll();
 		List<Product> specificProducts = new ArrayList<Product>();
 		for (Product product : allProducts) {
-			if(product.getName().contains(query) || product.getDescription().contains(query)) {
+			if(product.getName().toLowerCase().contains(queryLowerCase) || product.getDescription().toLowerCase().contains(queryLowerCase)) {
 				specificProducts.add(product);
 			}
 		}
